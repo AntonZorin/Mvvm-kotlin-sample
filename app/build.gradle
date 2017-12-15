@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: 'dependencies.gradle'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        applicationId "com.az.kotlinsample"
+        minSdkVersion 19
+        targetSdkVersion 26
+        buildToolsVersion "26.0.2"
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //region COMPILE_OPTIONS
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //endregion
+}
+
+dependencies {
+    implementation supportDependencies.appCompat
+    implementation supportDependencies.design
+    implementation supportDependencies.recyclerView
+    implementation supportDependencies.cardView
+    implementation supportDependencies.constraintLayout
+
+    implementation archComponents.room_runtime
+    kapt archComponents.room_compiler
+    implementation archComponents.room_rxjava2
+
+    implementation archComponents.lifecycle_runtime
+    implementation archComponents.lifecycle_extensions
+    kapt archComponents.lifecycle_compiler
+
+    implementation daggerDependencies.dagger
+    kapt daggerDependencies.annotationProcessor
+    implementation daggerDependencies.daggerAndroid
+    kapt daggerDependencies.dagger_android_processor
+    implementation daggerDependencies.daggerAndroidSupport
+
+    implementation retrofitDependencies.gson
+    implementation retrofitDependencies.retrofit
+    implementation retrofitDependencies.okhttp
+    implementation retrofitDependencies.okhttp_logging_interceptor
+    implementation retrofitDependencies.rxAdapterJava
+
+    implementation rxDependencies.rxAndroid
+    implementation rxDependencies.rxJava
+
+    implementation cicerone
+
+    testImplementation testingDependencies.junit
+    testImplementation testingDependencies.mockito
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}

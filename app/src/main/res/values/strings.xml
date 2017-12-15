@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KotlinSample</string>
+    <string name="login">Login</string>
+    <string name="get_data">get data</string>
+    <string name="login_successful">Login succesful</string>
+    <string name="login_fail">Login fail</string>
+    <string name="error">Error</string>
+</resources>
