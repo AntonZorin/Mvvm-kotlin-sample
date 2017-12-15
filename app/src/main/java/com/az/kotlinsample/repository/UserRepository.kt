@@ -13,7 +13,7 @@ import javax.inject.Inject
 /**
  * Created by zorin.a on 15.12.2017.
  */
-
+//TODO: implement db
 class UserRepository @Inject constructor(private val dataSource: UserDao, val apiManager: ApiManager, val prefManager: PrefManager) {
 
     fun login(request: LoginRequest): Observable<Boolean> = apiManager
@@ -34,9 +34,7 @@ class UserRepository @Inject constructor(private val dataSource: UserDao, val ap
         return Observable.just(response)
     }
 
-
 //    fun saveUser(user: User): CompletableFromAction = CompletableFromAction(Action { dataSource.insertUser(user) })
 //
 //    fun queryUserByName(name: String): Flowable<User> = dataSource.getUserByName(name)
-
 }
