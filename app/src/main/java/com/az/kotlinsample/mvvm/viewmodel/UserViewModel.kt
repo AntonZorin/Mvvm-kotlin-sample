@@ -18,7 +18,7 @@ class UserViewModel(router: Router, private val userRepository: UserRepository) 
 
     fun login() {
         progressData.postValue(true)
-        userRepository.login(LoginRequest("Ivanov", "3as24sd2"))
+        addDisposable(userRepository.login(LoginRequest("Ivanov", "3as24sd2"))
                 .subscribe(
                         { success ->
                             if (success == true) {
@@ -26,24 +26,24 @@ class UserViewModel(router: Router, private val userRepository: UserRepository) 
                             } else {
                                 loginData.postValue(false)
                             }
-                        }, { errorData.postValue(true) })
+                        }, { errorData.postValue(true) }))
     }
 
     fun getUser() {
         progressData.postValue(true)
-        userRepository.getUser(1)
+        addDisposable(userRepository.getUser(1)
                 .subscribe({ resp ->
                     userData.postValue(resp.user)
                     progressData.postValue(false)
-                }, { errorData.postValue(true) })
+                }, { errorData.postValue(true) }))
     }
 
     fun getUserCars(limit: Int, offset: Int) {
         progressData.postValue(true)
-        userRepository.getCars(1, limit, offset)
+        addDisposable(userRepository.getCars(1, limit, offset)
                 .subscribe({ resp ->
                     carsData.postValue(resp.cars)
                     progressData.postValue(false)
-                })
+                }))
     }
 }
