@@ -6,7 +6,7 @@
                                              android:layout_height="match_parent">
 
     <com.az.kotlinsample.ui.custom_views.StatusView
-        android:id="@+id/progressView"
+        android:id="@+id/statusView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:background="@color/colorPrimaryDark"/>

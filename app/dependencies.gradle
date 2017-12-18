@@ -38,15 +38,16 @@ ext {
 
     archComponents = [
 
-            lifecycle_runtime   : buildDependency(archPackage + ".lifecycle", 'runtime', versions.arch),
-            lifecycle_compiler  : buildDependency(archPackage + ".lifecycle", 'compiler', versions.arch),
-            lifecycle_extensions: buildDependency(archPackage + ".lifecycle", 'extensions', versions.arch),
-            lifecycle_java8     : buildDependency(archPackage + ".lifecycle", 'common-java8', versions.arch),
-            arch_core           : buildDependency(archPackage + ".core", 'core-testing', versions.arch),
+            lifecycle_runtime        : buildDependency(archPackage + ".lifecycle", 'runtime', versions.arch),
+            lifecycle_compiler       : buildDependency(archPackage + ".lifecycle", 'compiler', versions.arch),
+            lifecycle_extensions     : buildDependency(archPackage + ".lifecycle", 'extensions', versions.arch),
+            lifecycle_reactivestreams: buildDependency(archPackage + ".lifecycle", 'reactivestreams', versions.arch),
+            lifecycle_java8          : buildDependency(archPackage + ".lifecycle", 'common-java8', versions.arch),
+            arch_core                : buildDependency(archPackage + ".core", 'core-testing', versions.arch),
 
-            room_runtime        : buildDependency(archPackage + ".persistence.room", 'runtime', versions.arch),
-            room_compiler       : buildDependency(archPackage + ".persistence.room", 'compiler', versions.arch),
-            room_rxjava2        : buildDependency(archPackage + ".persistence.room", 'rxjava2', versions.arch)
+            room_runtime             : buildDependency(archPackage + ".persistence.room", 'runtime', versions.arch),
+            room_compiler            : buildDependency(archPackage + ".persistence.room", 'compiler', versions.arch),
+            room_rxjava2             : buildDependency(archPackage + ".persistence.room", 'rxjava2', versions.arch)
     ]
 
     retrofitDependencies = [

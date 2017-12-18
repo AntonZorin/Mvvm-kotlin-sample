@@ -14,7 +14,7 @@ import javax.inject.Inject
  * Created by zorin.a on 15.12.2017.
  */
 //TODO: implement db
-class UserRepository @Inject constructor(private val dataSource: UserDao, val apiManager: ApiManager, val prefManager: PrefManager) {
+class UserRepository @Inject constructor(private val dataSource: UserDao, private val apiManager: ApiManager, private val prefManager: PrefManager) {
 
     fun login(request: LoginRequest): Observable<Boolean> = apiManager
             .login(request)

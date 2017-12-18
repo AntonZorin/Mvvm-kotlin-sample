@@ -44,6 +44,7 @@ dependencies {
 
     implementation archComponents.lifecycle_runtime
     implementation archComponents.lifecycle_extensions
+    implementation archComponents.lifecycle_reactivestreams
     kapt archComponents.lifecycle_compiler
 
     implementation daggerDependencies.dagger
