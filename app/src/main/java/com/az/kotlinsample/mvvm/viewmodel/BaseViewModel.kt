@@ -10,6 +10,7 @@ import ru.terrakok.cicerone.Router
 abstract class BaseViewModel(private val router: Router) : ViewModel() {
     internal var progressData = MutableLiveData<Boolean>()
     internal var errorData = MutableLiveData<Boolean>()
+
     fun switchScreen(screen: String, data: Any? = null) = if (data != null) {
         router.navigateTo(screen)
     } else {

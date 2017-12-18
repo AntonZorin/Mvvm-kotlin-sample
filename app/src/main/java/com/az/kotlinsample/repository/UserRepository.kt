@@ -27,14 +27,9 @@ class UserRepository @Inject constructor(private val dataSource: UserDao, privat
 
     fun getCars(imageDensity: Int, limit: Int, offset: Int): Observable<CarsResponse> = apiManager.getCars(imageDensity, limit, offset)
 
-
     private fun saveToken(response: LoginResponse): Observable<LoginResponse> {
         val token = response.token
         prefManager.seveToken(token)
         return Observable.just(response)
     }
-
-//    fun saveUser(user: User): CompletableFromAction = CompletableFromAction(Action { dataSource.insertUser(user) })
-//
-//    fun queryUserByName(name: String): Flowable<User> = dataSource.getUserByName(name)
 }
